@@ -1,7 +1,17 @@
-import React, { useReducer } from 'react'
-import { Flex } from 'rebass'
+import React, { useReducer, useState } from 'react'
+import { Box, Flex } from 'rebass'
+import RemoteCheckbox from './RemoteCheckbox'
 import SearchBox from './SearchBox'
-import { Checkbox, Label } from '@rebass/forms'
+import TechFilter from './TechFilter'
+import Modal from './Modal'
+import CodeIcon from '../icons/CodeIcon'
+import WalletIcon from '../icons/WalletIcon'
+import ChecklistIcon from '../icons/ChecklistIcon'
+import FilterButton from './FilterButton'
+
+const filterComponents = {
+  tech: TechFilter,
+}
 
 const initialState = {
   isRemote: false,
@@ -18,35 +28,61 @@ const reducer = (state, action) => {
 
 const SearchForm = () => {
   const [state, dispatch] = useReducer(reducer, initialState)
+  const [selectedFilter, setSelectedFilter] = useState('')
+
+  const toggleFilter = (e) => {
+    if (selectedFilter === e.target.id) {
+      setSelectedFilter('')
+    } else {
+      setSelectedFilter(e.target.id)
+    }
+  }
 
   const toggleRemote = () =>
     dispatch({ type: 'TOGGLE_REMOTE', payload: !state.isRemote })
 
+  const FilterComponent = selectedFilter && filterComponents[selectedFilter]
+
   return (
     <Flex as='form' flexDirection='column'>
-      <Flex padding='1rem' pb='0.5rem'>
+      <Flex padding='1rem'>
         <SearchBox />
       </Flex>
 
-      <Flex as='fieldset' sx={{ border: 0, px: '1rem', py: '0' }}>
-        <Label
-          htmlFor='remote'
-          sx={{
-            fontSize: 14,
-            display: 'flex',
-            alignItems: 'center',
-          }}
-        >
-          <Checkbox
-            id='remote'
-            name='remote'
-            checked={state.isRemote}
-            onChange={toggleRemote}
-            sx={{}}
-          />{' '}
-          Remote
-        </Label>
+      <Flex
+        flexDirection='row'
+        justifyContent='flex-start'
+        alignItems='center'
+        overflowX='scroll'
+        pl='1rem'
+      >
+        <RemoteCheckbox onToggle={toggleRemote} isRemote={state.isRemote} />
+        <FilterButton name='tech'>
+          <CodeIcon />
+        </FilterButton>
+
+        <FilterButton name='salary'>
+          <WalletIcon />
+        </FilterButton>
+
+        <FilterButton name='experience'>
+          <ChecklistIcon />
+        </FilterButton>
+
+        <FilterButton name='category'>
+          <WalletIcon />
+        </FilterButton>
+
+        <Box px='1rem' />
       </Flex>
+
+      <Box sx={{ position: 'relative' }}>
+        {selectedFilter && (
+          <Modal>
+            <FilterComponent />
+          </Modal>
+        )}
+      </Box>
     </Flex>
   )
 }
