@@ -11,9 +11,9 @@ const RemoteCheckbox = ({ onToggle, isRemote }) => (
     sx={{
       fontSize: 14,
       mr: '0.25rem',
-      border: '1px solid grey',
+      border: '1px solid #b2bec3',
       borderRadius: 4,
-      color: 'black',
+      color: '#2d3436',
       padding: '0.375rem',
       lineHeight: '1rem',
       width: 'fit-content',
@@ -27,9 +27,10 @@ const RemoteCheckbox = ({ onToggle, isRemote }) => (
       checked={isRemote}
       onChange={onToggle}
       sx={{
-        height: 16,
-        width: 16,
+        height: 14,
+        width: 14,
         borderRadius: 4,
+        borderColor: '#2d3436',
         mr: '0.25rem',
         padding: 0,
       }}

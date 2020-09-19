@@ -2,7 +2,7 @@ import React from 'react'
 import { Button } from 'rebass'
 
 const FilterButton = ({ name, onClick, children, isActive }) => {
-  let color = isActive ? '#A61B1B' : 'black'
+  let color = isActive ? '#A61B1B' : '#2d3436'
   let bgColor = isActive ? '#FFEEEE' : 'white'
 
   return (
@@ -13,7 +13,7 @@ const FilterButton = ({ name, onClick, children, isActive }) => {
         backgroundColor: bgColor,
         borderWidth: 1,
         borderStyle: 'solid',
-        borderColor: color,
+        borderColor: isActive ? '#A61B1B' : '#b2bec3',
         borderRadius: 4,
         lineHeight: '1rem',
         padding: '0.375rem',
