@@ -1,8 +1,8 @@
 import React, { useRef, useState } from 'react'
 import { Input } from '@rebass/forms'
 import { Box, Button, Flex } from 'rebass'
-import SearchIcon from './icons/SearchIcon'
-import XIcon from './icons/XIcon'
+import SearchIcon from '../icons/SearchIcon'
+import XIcon from '../icons/XIcon'
 
 const SearchBox = () => {
   const inputElement = useRef(null)
@@ -40,7 +40,7 @@ const SearchBox = () => {
         ref={inputElement}
         sx={{
           pt: '0.5rem',
-          pr: '1rem',
+          pr: 0,
           pl: 0,
           borderRadius: 4,
           border: 'none',
