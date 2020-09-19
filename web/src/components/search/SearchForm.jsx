@@ -8,6 +8,7 @@ import CodeIcon from '../icons/CodeIcon'
 import WalletIcon from '../icons/WalletIcon'
 import ChecklistIcon from '../icons/ChecklistIcon'
 import FilterButton from './FilterButton'
+import CategoryIcon from '../icons/CategoryIcon'
 
 const filterComponents = {
   tech: TechFilter,
@@ -70,7 +71,7 @@ const SearchForm = () => {
         </FilterButton>
 
         <FilterButton name='category'>
-          <WalletIcon />
+          <CategoryIcon />
         </FilterButton>
 
         <Box px='1rem' />
