@@ -58,32 +58,48 @@ const SearchForm = () => {
         pl='1rem'
       >
         <RemoteCheckbox onToggle={toggleRemote} isRemote={state.isRemote} />
-        <FilterButton name='tech'>
+        <FilterButton
+          name='tech'
+          onClick={toggleFilter}
+          isActive={selectedFilter === 'tech'}
+        >
           <CodeIcon />
         </FilterButton>
 
-        <FilterButton name='salary'>
+        <FilterButton
+          name='salary'
+          onClick={toggleFilter}
+          isActive={selectedFilter === 'salary'}
+        >
           <WalletIcon />
         </FilterButton>
 
-        <FilterButton name='experience'>
+        <FilterButton
+          name='experience'
+          isActive={selectedFilter === 'experience'}
+          onClick={toggleFilter}
+        >
           <ChecklistIcon />
         </FilterButton>
 
-        <FilterButton name='category'>
+        <FilterButton
+          name='category'
+          isActive={selectedFilter === 'category'}
+          onClick={toggleFilter}
+        >
           <CategoryIcon />
         </FilterButton>
 
         <Box px='1rem' />
       </Flex>
 
-      <Box sx={{ position: 'relative' }}>
+      {/* <Box sx={{ position: 'relative' }}>
         {selectedFilter && (
           <Modal>
             <FilterComponent />
           </Modal>
         )}
-      </Box>
+      </Box> */}
     </Flex>
   )
 }

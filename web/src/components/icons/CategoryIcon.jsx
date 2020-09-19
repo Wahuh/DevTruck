@@ -17,7 +17,6 @@ const CategoryIcon = () => (
       ry='20'
       style={{
         fill: 'none',
-        stroke: '#000',
         strokeLinecap: 'round',
         strokeLinejoin: 'round',
         strokeWidth: 32,
@@ -32,7 +31,6 @@ const CategoryIcon = () => (
       ry='20'
       style={{
         fill: 'none',
-        stroke: '#000',
         strokeLinecap: 'round',
         strokeLinejoin: 'round',
         strokeWidth: 32,
@@ -47,7 +45,6 @@ const CategoryIcon = () => (
       ry='20'
       style={{
         fill: 'none',
-        stroke: '#000',
         strokeLinecap: 'round',
         strokeLinejoin: 'round',
         strokeWidth: 32,
@@ -62,7 +59,6 @@ const CategoryIcon = () => (
       ry='20'
       style={{
         fill: 'none',
-        stroke: '#000',
         strokeLinecap: 'round',
         strokeLinejoin: 'round',
         strokeWidth: 32,

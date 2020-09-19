@@ -17,7 +17,6 @@ const WalletIcon = () => (
       ry='48'
       style={{
         fill: 'none',
-        stroke: '#000',
         strokeLinejoin: 'round',
         strokeWidth: '32px',
       }}
@@ -26,7 +25,6 @@ const WalletIcon = () => (
       d='M411.36,144V114A50,50,0,0,0,352,64.9L88.64,109.85A50,50,0,0,0,48,159v49'
       style={{
         fill: 'none',
-        stroke: '#000',
         strokeLinejoin: 'round',
         strokeWidth: '32px',
       }}
