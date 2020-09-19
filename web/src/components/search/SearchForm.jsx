@@ -45,7 +45,7 @@ const SearchForm = () => {
   const FilterComponent = selectedFilter && filterComponents[selectedFilter]
 
   return (
-    <Flex as='form' flexDirection='column'>
+    <Flex as='form' flexDirection='column' pb='1rem'>
       <Flex padding='1rem'>
         <SearchBox />
       </Flex>
@@ -85,6 +85,14 @@ const SearchForm = () => {
         <FilterButton
           name='category'
           isActive={selectedFilter === 'category'}
+          onClick={toggleFilter}
+        >
+          <CategoryIcon />
+        </FilterButton>
+
+        <FilterButton
+          name='source'
+          isActive={selectedFilter === 'source'}
           onClick={toggleFilter}
         >
           <CategoryIcon />
